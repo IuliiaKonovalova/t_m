@@ -8,15 +8,16 @@
   <title>Task Manager</title>
 </head>
 <br>
-{{tasks}}
-<!-- {% for task in tasks %} -->
-<!-- {{ task.task_name }} <br>
+
+{% for task in tasks %}
+
+{{ task.task_name }} <br>
 {{ task.category_name }} <br>
 {{ task.task_description }} <br>
 {{ task.is_urgent }} <br>
-{{ task.due_date }} <br> -->
+{{ task.due_date }} <br>
 
-<!-- {% endfor %} -->
+{% endfor %}
 </body>
 
 </html>
