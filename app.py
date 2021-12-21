@@ -37,7 +37,7 @@ def register():
         if existing_user:
             flash("Username already exists")
             return redirect(url_for("register"))
-
+        # if username does not exists in db
         register = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password"))
