@@ -14,13 +14,13 @@
         <a class="waves-effect waves-light btn-small red accent-4 modal-trigger" href="#modal1">Modal</a>
         <div id="modal1" class="modal">
           <div class="modal-content">
-            <h4>Modal Header</h4>
-            <p>A bunch of text</p>
+            <h4 class="blue-text text-darken-4 center-align modal_center">Do you want to delete the task?</h4>
           </div>
           <div class="modal-footer">
-            <a href="{{ url_for('get_tasks') }}">Back to Tasks</a>
+            <a href="{{ url_for('get_tasks') }}" class="btn-flat light-green-text text-darken-4 shadow_none">Back to
+              Tasks</a>
             <a href="{{ url_for('delete_task', task_id=task._id) }}"
-              class="modal-close waves-effect waves-green btn-flat">Delete Task</a>
+              class="modal-close waves-effect waves-green btn-flat red-text text-accent-4">Delete Task</a>
           </div>
         </div>
         <!-- edit task -->
