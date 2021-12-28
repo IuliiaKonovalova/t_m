@@ -29,9 +29,11 @@
             <h4 class="blue-text text-darken-4 center-align modal_center">Do you want to delete the task?</h4>
           </div>
           <div class="modal-footer">
-            <a href="" class="btn-flat light-green-text text-darken-4 shadow_none">Back to
-              Tasks</a>
-            <a href="" class="modal-close waves-effect waves-green btn-flat red-text text-accent-4">Delete Task</a>
+            <a href="{{ url_for('get_categories') }}" class="btn-flat light-green-text text-darken-4 shadow_none">Back
+              to
+              Categories</a>
+            <a href="{{ url_for('delete_category', category_id=category._id) }}"
+              class="modal-close waves-effect waves-green btn-flat red-text text-accent-4">Delete Category</a>
           </div>
         </div>
 
