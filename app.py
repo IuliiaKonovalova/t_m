@@ -157,12 +157,12 @@ def add_category():
           )
         if existing_category:
             # ensure hashed password matches user input
-            flash("Category already")
+            flash("Category already exist")
             return redirect(url_for("get_categories"))
         categories = {
           "category_name": request.form.get("category_name")
         }
-        mongo.db.categories.insert_one()
+        mongo.db.categories.insert_one(categories)
         flash("New Category Added")
         return redirect(url_for("get_categories"))
     return render_template("add_category.html")
