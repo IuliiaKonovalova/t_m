@@ -6,8 +6,11 @@
   <div class="col s12 m8 offset-m2">
     <div class="card-panel">
       <h3 class="center-align light-blue-text text-darken-4">
-        {{ username }}'s Profile
+        {{ username|upper }}'s Profile
       </h3>
+      <h4 class="center-align light-grey-text text-darken-4">
+        Your email: {{ email }}
+      </h4>
     </div>
   </div>
 </div>
