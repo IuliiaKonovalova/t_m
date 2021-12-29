@@ -72,7 +72,9 @@ def login():
                 existing_email["password"], request.form.get("password")
             ):
                 session["user"] = request.form.get("email")
-                flash("Welcome, {}".format(request.form.get("username")))
+                username = mongo.db.users.find_one(
+                    {"email": session["user"]})["username"]
+                flash("Welcome, {}".format(username))
                 return redirect(url_for("profile", email=session["user"]))
             else:
                 # invalid password match
