@@ -29,7 +29,13 @@
 .invalid_username,
 .invalid_email,
 .invalid_password {
-  color: rgb(228, 112, 17);
+  color: rgb(233, 118, 24);
+  padding-left: 3rem;
+  font-weight: bold;
+}
+
+.invalid_password {
+  padding-bottom: 2rem;
 }
 
 .username_hidden,
