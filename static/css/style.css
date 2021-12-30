@@ -43,3 +43,8 @@
 .password_hidden {
   display: none;
 }
+
+.profile_options {
+  padding-top: 2.5rem;
+  padding-bottom: 2rem;
+}
