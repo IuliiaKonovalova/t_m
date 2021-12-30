@@ -10,28 +10,33 @@
         <div class="input-field col s12">
           <i class="fas fa-user-plus prefix light-blue-text text-darken-4"></i>
           <input id="username" name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9_ ]{5,15}$"
-            class="validate" required>
+            class="validate username_container" data-error="Enter you name from 5 - 15" required>
           <label for="username">User</label>
         </div>
       </div>
-      <!--username-->
+      <p class="username_hidden invalid_username">Enter at least 5 characters</p>
+      <!--email-->
       <div class="row">
         <div class="input-field col s12">
           <i class="fas fa-envelope prefix light-blue-text text-darken-4"></i>
-          <input id="email" name="email" type="text" pattern="^\S+@\S+\.\S+$" class="validate" required>
+          <input id="email" name="email" type="text" pattern="^\S+@\S+\.\S+$" class="validate email_container" required>
           <label for="email">Email</label>
         </div>
       </div>
+      <p class="email_hidden invalid_email">Enter valid email address</p>
       <!--password-->
       <div class="row">
         <div class="input-field col s12">
           <i class="fas fa-user-lock prefix light-blue-text text-darken-4"></i>
           <input id="password" name="password" type="password" minlength="8" maxlength="32"
             pattern="^(?:(?=.*[a-z])(?:(?=.*[A-Z])(?=.*[\d\W])|(?=.*\W)(?=.*\d))|(?=.*\W)(?=.*[A-Z])(?=.*\d)).{8,32}$"
-            class="validate" required>
+            class="validate password_container" required>
           <label for="password">Password</label>
         </div>
       </div>
+      <p class="password_hidden invalid_password">Enter 8-32 characters including upper and lower case letters and
+        numbers
+      </p>
       <!--register-->
       <div class="row">
         <button type="submit" class="col s12 btn-large light-blue darken-4 text-shadow">

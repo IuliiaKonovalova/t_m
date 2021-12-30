@@ -5,6 +5,27 @@ $(document).ready(function () {
   $('.collapsible').collapsible();
   $('.tooltipped').tooltip();
   $('select').formSelect();
+  $(".username_container").change(function () {
+    if ($(this).is(":invalid")) {
+      $(".invalid_username").removeClass("username_hidden")
+    } else {
+      $(".invalid_username").addClass("username_hidden")
+    }
+  });
+  $(".email_container").change(function () {
+    if ($(this).is(":invalid")) {
+      $(".invalid_email").removeClass("email_hidden")
+    } else {
+      $(".invalid_email").addClass("email_hidden")
+    }
+  });
+  $(".password_container").change(function () {
+    if ($(this).is(":invalid")) {
+      $(".invalid_password").removeClass("password_hidden")
+    } else {
+      $(".invalid_password").addClass("password_hidden")
+    }
+  });
   $('.datepicker').datepicker({
     format: "dd mmmm, yyyy",
     yearRange: 3,

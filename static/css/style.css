@@ -24,3 +24,16 @@
   text-transform: uppercase;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
+
+
+.invalid_username,
+.invalid_email,
+.invalid_password {
+  color: rgb(228, 112, 17);
+}
+
+.username_hidden,
+.email_hidden,
+.password_hidden {
+  display: none;
+}
