@@ -3,7 +3,7 @@
 
 <h3 class="center-align light-blue-text text-darken-4">Delete Profile</h3>
 <div class="row">
-  <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('login') }}">
+  <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('delete_profile', user_id=user_id) }}">
     <div class="card-panel">
       <div class="card-action center-align profile_options">
         <a href="{{ url_for('profile', email=email) }}"

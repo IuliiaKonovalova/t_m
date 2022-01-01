@@ -215,6 +215,21 @@ def delete_category(category_id):
 def delete_profile(user_id):
     email = mongo.db.users.find_one(
         {"_id": ObjectId(user_id)})["email"]
+    if request.method == "POST":
+        # email = mongo.db.users.find_one({"_id": ObjectId(user_id)})["email"]
+        passw = mongo.db.users.find_one({"_id": ObjectId(user_id)})["password"]
+        if check_password_hash(
+            passw, request.form.get("password")
+        ):
+            
+            flash("Thank you for being with us")
+            return redirect(url_for("register"))
+        else:
+            # invalid password match
+            flash("Incorrect Username and/or Password")
+            return redirect(url_for("login"))
+        # return render_template("delete_profile.html", user_id=user_id, email=email)
+
     return render_template("delete_profile.html", user_id=user_id, email=email)
 
 
