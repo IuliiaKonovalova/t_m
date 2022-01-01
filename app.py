@@ -211,6 +211,13 @@ def delete_category(category_id):
     return redirect(url_for("get_tasks"))
 
 
+@app.route("/delete_profile/<user_id>")
+def delete_profile(user_id):
+    email = mongo.db.users.find_one(
+        {"_id": ObjectId(user_id)})["email"]
+    return render_template("delete_profile.html", user_id=user_id, email=email)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
