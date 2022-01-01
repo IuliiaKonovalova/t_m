@@ -103,10 +103,10 @@ def edit_profile(user_id):
     if request.method == "POST":
         mongo.db.users.update_one({"_id": ObjectId(user_id)}, {"$set": { "username": request.form.get("username").lower(),}})
         flash("Profile Successfully Updated")
-
-
         email = mongo.db.users.find_one( {"email": session["user"]})["email"]
-        return render_template("profile.html", email=email)
+        username = mongo.db.users.find_one(
+        {"email": session["user"]})["username"]
+        return render_template("profile.html", email=email, username=username, user_id=user_id)
     email = mongo.db.users.find_one( {"email": session["user"]})["email"]
     return render_template("edit_profile.html", email=email, user_id=user_id)
 
