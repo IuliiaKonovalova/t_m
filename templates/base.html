@@ -27,9 +27,9 @@
           {% if session.user %}
           <li><a href="{{ url_for('profile', email=session['user']) }}" class="navbar__items">Profile</a></li>
           <li><a href="{{ url_for('add_task') }}" class="navbar__items">New Tasks</a></li>
-
+          {% if session.user == "admin@gmail.com" %}
           <li><a href="{{ url_for('get_categories') }}" class="navbar__items">MC</a></li>
-
+          {% endif %}
           <li><a href="{{ url_for('logout') }}" class="navbar__items">Log Out</a></li>
           {% else %}
           <li><a href="{{ url_for('login') }}" class="navbar__items">Log In</a></li>
@@ -48,7 +48,9 @@
       {% if session.user %}
       <li><a href="{{ url_for('profile', email=session['user']) }}">Profile</a></li>
       <li><a href="{{ url_for('add_task') }}">New Tasks</a></li>
+      {% if session.user == "admin@gmail.com" %}
       <li><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
+      {% endif %}
       <li><a href="{{ url_for('logout') }}">Log Out</a></li>
       {% else %}
       <li><a href="{{ url_for('login') }}">Log In</a></li>
