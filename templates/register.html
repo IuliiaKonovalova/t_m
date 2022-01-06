@@ -8,7 +8,7 @@
       <!--username-->
       <div class="row">
         <div class="input-field col s12">
-          <i class="fas fa-user-plus prefix light-blue-text text-darken-4"></i>
+          <i class="fas fa-user-plus prefix light-green-text text-darken-4"></i>
           <input id="username" name="username" type="text" minlength="5" maxlength="20" pattern="^[a-zA-Z0-9_ ]{5,20}$"
             class="validate username_container" required>
           <label for="username">User</label>
@@ -18,7 +18,7 @@
       <!--email-->
       <div class="row">
         <div class="input-field col s12">
-          <i class="fas fa-envelope prefix light-blue-text text-darken-4"></i>
+          <i class="fas fa-envelope prefix light-green-text text-darken-4"></i>
           <input id="email" name="email" type="text" pattern="^\S+@\S+\.\S+$" class="validate email_container" required>
           <label for="email">Email</label>
         </div>
@@ -27,7 +27,7 @@
       <!--password-->
       <div class="row">
         <div class="input-field col s12">
-          <i class="fas fa-user-lock prefix light-blue-text text-darken-4"></i>
+          <i class="fas fa-user-lock prefix light-green-text text-darken-4"></i>
           <input id="password" name="password" type="password" minlength="8" maxlength="32"
             pattern="^(?:(?=.*[a-z])(?:(?=.*[A-Z])(?=.*[\d\W])|(?=.*\W)(?=.*\d))|(?=.*\W)(?=.*[A-Z])(?=.*\d)).{8,32}$"
             class="validate password_container" required>
@@ -39,7 +39,7 @@
       </p>
       <!--register-->
       <div class="row">
-        <button type="submit" class="col s12 btn-large light-blue darken-4 text-shadow">
+        <button type="submit" class="col s12 btn-large btn-large light-green darken-4">
           Register<i class="fas fa-sign-in-alt"></i>
         </button>
       </div>
@@ -50,7 +50,7 @@
 <div class="row">
   <div class="col s12">
     <p class="center-align">
-      Already Register?<a href="{{ url_for('login') }}" class="light-blue-text text-darken-4">Log In</a>
+      Already Register? <a href="{{ url_for('login') }}" class="light-green-text text-darken-4"> Log In</a>
     </p>
   </div>
 </div>
