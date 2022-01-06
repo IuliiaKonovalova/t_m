@@ -6,6 +6,10 @@
   margin-left: 0.7em;
 }
 
+.navbar__items {
+  font-size: 1.8rem;
+}
+
 .flashes h4 {
   line-height: 2;
 }

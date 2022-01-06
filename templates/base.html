@@ -17,23 +17,23 @@
 <body>
   <header>
     <!--Top navbar-->
-    <nav class="nav-extended text-shadow  green darken-3 " style="padding: 3.5em 1em ;">
+    <nav class="nav-extended text-shadow  green darken-3 " style="padding: 3.5em 1em;">
       <div class="nav-wrapper">
         <a href="{{ url_for('get_tasks') }}" class="brand-logo brand__logo--custom "> <i class="fas fa-tasks"></i>Task
           Manager</a>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="{{ url_for('get_tasks') }}">Home</a></li>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger right "><i class="fas fa-bars"></i></a>
+        <ul class="right hide-on-med-and-down ">
+          <li><a href="{{ url_for('get_tasks') }}" class="navbar__items">Home</a></li>
           {% if session.user %}
-          <li><a href="{{ url_for('profile', email=session['user']) }}">Profile</a></li>
-          <li><a href="{{ url_for('add_task') }}">New Tasks</a></li>
+          <li><a href="{{ url_for('profile', email=session['user']) }}" class="navbar__items">Profile</a></li>
+          <li><a href="{{ url_for('add_task') }}" class="navbar__items">New Tasks</a></li>
 
-          <li><a href="{{ url_for('get_categories') }}">Manage Categories</a></li>
+          <li><a href="{{ url_for('get_categories') }}" class="navbar__items">MC</a></li>
 
-          <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+          <li><a href="{{ url_for('logout') }}" class="navbar__items">Log Out</a></li>
           {% else %}
-          <li><a href="{{ url_for('login') }}">Log In</a></li>
-          <li><a href="{{ url_for('register') }}">Register</a></li>
+          <li><a href="{{ url_for('login') }}" class="navbar__items">Log In</a></li>
+          <li><a href="{{ url_for('register') }}" class="navbar__items">Register</a></li>
           {% endif %}
 
         </ul>
