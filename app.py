@@ -211,25 +211,25 @@ def delete_category(category_id):
     return redirect(url_for("get_tasks"))
 
 
-@app.route("/delete_profile/<user_id>")
+@app.route("/delete_profile/<user_id>", methods=["GET", "POST"])
 def delete_profile(user_id):
     email = mongo.db.users.find_one(
         {"_id": ObjectId(user_id)})["email"]
     if request.method == "POST":
-        # email = mongo.db.users.find_one({"_id": ObjectId(user_id)})["email"]
-        passw = mongo.db.users.find_one({"_id": ObjectId(user_id)})["password"]
+        # existing_email = mongo.db.users.find_one(
+        #     {"email": request.form.get("email").lower()})
+        password_to_check = mongo.db.users.find_one(
+            {"_id": ObjectId(user_id)})["password"]
         if check_password_hash(
-            passw, request.form.get("password")
+            password_to_check, request.form.get("password")
         ):
             
             flash("Thank you for being with us")
-            return redirect(url_for("register"))
+            mongo.db.users.delete_one({"_id": ObjectId(user_id)})
+            session["user"] = request.form.get("email")
+            return redirect(url_for("get_tasks", email = session["user"]))
         else:
-            # invalid password match
             flash("Incorrect Username and/or Password")
-            return redirect(url_for("login"))
-        # return render_template("delete_profile.html", user_id=user_id, email=email)
-
     return render_template("delete_profile.html", user_id=user_id, email=email)
 
 
